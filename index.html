@@ -9,15 +9,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Stake Earn Unichain Sepolia</title>
+    <title>Stake AIT Earn TEA</title>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        Pixelify: ['Pixelify Sans'],
+                        Pixelify: ['"Roboto Mono"', 'monospace'],
                     }
                 }
             }
@@ -29,90 +30,92 @@
     style="background: #2b5876; background: -webkit-linear-gradient(to right, #2b5876, #4e4376); background: linear-gradient(to right, #2b5876, #4e4376);">
 
     <div class="w-full h-screen flex justify-center items-center">
-    <div
-        class="max-w-full h-auto py-4 px-4 mx-4 mt-4 mb-10 backdrop-blur-lg bg-white/5 font-Pixelify rounded-lg shadow-md">
-        <div class="flex justify-between">
-            <h1 class="text-[24px] font-bold text-white">/Staking</h1>
-            <div class="flex">
+        <div
+            class="max-w-full h-auto py-4 px-4 mx-4 mt-4 mb-10 backdrop-blur-lg bg-white/5 font-Pixelify rounded-lg shadow-md">
+            <div class="flex justify-between">
+                <h1 class="text-[24px] font-bold text-white">/Staking</h1>
+                <div class="flex">
+
+                    <div
+                        class="flex items-center px-2 py-[2px] text-[16px] bg-slate-700 text-white hover:bg-slate-800 hover:text-slate-200 rounded-md">
+                        <img src="images/metamask.png" alt="" class="w-5 h-5 mr-1">
+                        <button id="connectButton" onclick="init()">Connect Metamask</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-between items-center mt-2 mb-4">
+                <div class="text-[20px] text-white font-Pixelify">Stake AIT Earn TEA</div>
+                <button id="claimButton"
+                    class="py-[4px] px-2 rounded-md text-[18px] text-white bg-slate-700 hover:bg-slate-800 hover:text-slate-200">Faucet
+                    AIT</button>
+            </div>
+
+            <div class="text-[18px] font-semibold mb-2 text-white">Balance: <span class="text-[18px]"
+                    id="balance"></span><span class="text-[16px]"> $AIT</span></div>
+
+            <div class="mb-8">
+                <div
+                    class="pt-2 pb-4 px-2 mb-4 flex flex-col justify-center-center rounded-lg shadow-lg backdrop-blur-lg bg-white/5">
+                    <label for="stakeAmount" class="text-white" id="stakeAmountLabel">Stake :</label>
+                    <div class="flex flex-col">
+                        <div class="flex items-center justify-center">
+                            <div class="flex w-full py-[2px] px-[2px] border-2 border-slate-400 rounded-md">
+                                <input id="stakeAmount" type="text"
+                                    class="w-full text-white ml-1 bg-transparent outline-none"
+                                    placeholder="Enter amount">
+                                <button
+                                    class="bg-slate-700 text-[16px] text-white py-1 px-2 ml-2 hover:bg-slate-800 hover:text-slate-200 font-semibold rounded-md"
+                                    id="maxStakeAmount" onclick="setMaxStakeAmount()">Max</button>
+                            </div>
+                            <button
+                                class="bg-slate-700 text-white text-[18px] block hover:bg-slate-800 hover:text-slate-200 px-3 py-1 ml-1 font-semibold rounded-md"
+                                onclick="stake()">Stake</button>
+                        </div>
+                    </div>
+                </div>
 
                 <div
-                    class="flex items-center px-2 py-[2px] text-[14px] bg-slate-700 text-white hover:bg-slate-800 hover:text-slate-200 rounded-md">
-                    <img src="images/metamask.png" alt="" class="w-5 h-5 mr-1">
-                    <button id="connectButton" onclick="init()">Connect Metamask</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="flex justify-between items-center mt-2 mb-4">
-            <div class="text-[16px] text-white font-Pixelify">Unichain Sepolia Testnet.</div>
-            <button id="claimButton"
-                class="py-[4px] px-2 rounded-md text-[16px] text-white bg-slate-700 hover:bg-slate-800 hover:text-slate-200">Faucet
-                AIT</button>
-        </div>
-
-        <div class="text-[16px] font-semibold mb-2 text-white">Balance: <span class="text-[14px]"
-                id="balance"></span><span class="text-[14px]"> $AIT</span></div>
-
-        <div class="mb-8">
-            <div
-                class="pt-2 pb-4 px-2 mb-4 flex flex-col justify-center-center rounded-lg shadow-lg backdrop-blur-lg bg-white/5">
-                <label for="stakeAmount" class="text-white" id="stakeAmountLabel">Stake :</label>
-                <div class="flex flex-col">
-                    <div class="flex items-center justify-center">
-                        <div class="flex w-full py-[2px] px-[2px] border-2 border-slate-400 rounded-md">
-                            <input id="stakeAmount" type="text"
-                                class="w-full text-white ml-1 bg-transparent outline-none" placeholder="Enter amount">
+                    class="pt-2 pb-4 px-2 mb-4 flex flex-col justify-center-center rounded-lg shadow-lg backdrop-blur-lg bg-white/5">
+                    <label for="unstakeAmount" class="text-white" id="stakeAmountLabel">Unstake :</label>
+                    <div class="flex flex-col">
+                        <div class="flex items-center justify-center">
+                            <div class="flex w-full py-[2px] px-[2px] border-2 border-slate-400 rounded-md">
+                                <input id="unstakeAmount" type="text"
+                                    class="w-full text-white ml-1 bg-transparent outline-none"
+                                    placeholder="Enter amount">
+                                <button
+                                    class="bg-slate-700 text-[16px] text-white py-1 px-2 ml-2 hover:bg-slate-800 hover:text-slate-200 font-semibold rounded-md"
+                                    id="maxStakeAmount" onclick="setMaxUnstakeAmount()">Max</button>
+                            </div>
                             <button
-                                class="bg-slate-700 text-[14px] text-white py-1 px-2 ml-2 hover:bg-slate-800 hover:text-slate-200 font-semibold rounded-md"
-                                id="maxStakeAmount" onclick="setMaxStakeAmount()">Max</button>
+                                class="bg-slate-700 text-white text-[18px] block hover:bg-slate-800 hover:text-slate-200 px-3 py-1 ml-1 font-semibold rounded-md"
+                                onclick="unstakePartial()">Unstake</button>
                         </div>
-                        <button
-                            class="bg-slate-700 text-white text-[16px] block hover:bg-slate-800 hover:text-slate-200 px-3 py-1 ml-1 font-semibold rounded-md"
-                            onclick="stake()">Stake</button>
                     </div>
                 </div>
             </div>
 
-            <div
-                class="pt-2 pb-4 px-2 mb-4 flex flex-col justify-center-center rounded-lg shadow-lg backdrop-blur-lg bg-white/5">
-                <label for="unstakeAmount" class="text-white" id="stakeAmountLabel">Unstake :</label>
-                <div class="flex flex-col">
-                    <div class="flex items-center justify-center">
-                        <div class="flex w-full py-[2px] px-[2px] border-2 border-slate-400 rounded-md">
-                            <input id="unstakeAmount" type="text"
-                                class="w-full text-white ml-1 bg-transparent outline-none" placeholder="Enter amount">
-                            <button
-                                class="bg-slate-700 text-[14px] text-white py-1 px-2 ml-2 hover:bg-slate-800 hover:text-slate-200 font-semibold rounded-md"
-                                id="maxStakeAmount" onclick="setMaxUnstakeAmount()">Max</button>
-                        </div>
-                        <button
-                            class="bg-slate-700 text-white text-[16px] block hover:bg-slate-800 hover:text-slate-200 px-3 py-1 ml-1 font-semibold rounded-md"
-                            onclick="unstakePartial()">Unstake</button>
-                    </div>
+            <div class="grid grid-cols-2 gap-2 mb-6">
+                <div class="flex flex-col items-center p-2 rounded-lg backdrop-blur-lg bg-white/5 shadow-lg">
+                    <div class="text-white font-semibold text-[20px]">Rewards</div>
+                    <div class="text-white font-semibold text-[16px]"><span id="rewardAmount"></span> TEA</div>
+                    <button
+                        class="bg-slate-700 py-[2px] px-2 text-[18px] text-white hover:bg-slate-800 hover:text-slate-200 mx-auto block rounded-md"
+                        onclick="claimReward()">Claim</button>
+                </div>
+                <div class="flex flex-col items-center p-2 rounded-lg backdrop-blur-lg bg-white/5 shadow-lg">
+                    <div class="text-white font-semibold text-[20px]">Staked</div>
+                    <div class="text-white font-semibold text-[16px]"><span id="stakedAmount"></span> AIT</div>
                 </div>
             </div>
-        </div>
 
-        <div class="grid grid-cols-2 gap-2 mb-6">
-            <div class="flex flex-col items-center p-2 rounded-lg backdrop-blur-lg bg-white/5 shadow-lg">
-                <div class="text-white font-semibold text-[18px]">Rewards</div>
-                <div class="text-white font-semibold text-[14px]"><span id="rewardAmount"></span> ETH</div>
-                <button
-                    class="bg-slate-700 py-[2px] px-2 text-[16px] text-white hover:bg-slate-800 hover:text-slate-200 mx-auto block rounded-md"
-                    onclick="claimReward()">Claim</button>
+            <div class="flex justify-center gap-2 text-slate-800">
+                <a class="text-[26px]" href="https://x.com/m_amarudinn2"><i class="fa-brands fa-x-twitter"></i></a>
+                <a class="text-[26px]" href="https://t.me/AirdropIntelligent"><i class="fa-brands fa-telegram"></i></a>
             </div>
-            <div class="flex flex-col items-center p-2 rounded-lg backdrop-blur-lg bg-white/5 shadow-lg">
-                <div class="text-white font-semibold text-[18px]">Staked</div>
-                <div class="text-white font-semibold text-[14px]"><span id="stakedAmount"></span> AIT</div>
-            </div>
-        </div>
-
-        <div class="flex justify-center gap-2 text-slate-800">
-            <a class="text-[26px]" href="https://x.com/m_amarudinn2"><i class="fa-brands fa-x-twitter"></i></a>
-            <a class="text-[26px]" href="https://t.me/AirdropIntelligent"><i class="fa-brands fa-telegram"></i></a>
         </div>
     </div>
-</div>
 
     <script src="index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
