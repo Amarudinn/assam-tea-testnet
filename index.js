@@ -10,22 +10,22 @@ const contractABI = [
 		"type": "constructor"
 	},
 	{
-		"anonymous": False,
+		"anonymous": false,
 		"inputs": [
 			{
-				"indexed": True,
+				"indexed": true,
 				"internalType": "address",
 				"name": "owner",
 				"type": "address"
 			},
 			{
-				"indexed": True,
+				"indexed": true,
 				"internalType": "address",
 				"name": "spender",
 				"type": "address"
 			},
 			{
-				"indexed": False,
+				"indexed": false,
 				"internalType": "uint256",
 				"name": "value",
 				"type": "uint256"
@@ -78,16 +78,16 @@ const contractABI = [
 		"type": "function"
 	},
 	{
-		"anonymous": False,
+		"anonymous": false,
 		"inputs": [
 			{
-				"indexed": True,
+				"indexed": true,
 				"internalType": "address",
 				"name": "from",
 				"type": "address"
 			},
 			{
-				"indexed": False,
+				"indexed": false,
 				"internalType": "uint256",
 				"name": "value",
 				"type": "uint256"
@@ -145,22 +145,22 @@ const contractABI = [
 		"type": "function"
 	},
 	{
-		"anonymous": False,
+		"anonymous": false,
 		"inputs": [
 			{
-				"indexed": True,
+				"indexed": true,
 				"internalType": "address",
 				"name": "from",
 				"type": "address"
 			},
 			{
-				"indexed": True,
+				"indexed": true,
 				"internalType": "address",
 				"name": "to",
 				"type": "address"
 			},
 			{
-				"indexed": False,
+				"indexed": false,
 				"internalType": "uint256",
 				"name": "value",
 				"type": "uint256"
@@ -335,16 +335,16 @@ const contractStakingABI = [
 		"type": "constructor"
 	},
 	{
-		"anonymous": False,
+		"anonymous": false,
 		"inputs": [
 			{
-				"indexed": True,
+				"indexed": true,
 				"internalType": "address",
 				"name": "user",
 				"type": "address"
 			},
 			{
-				"indexed": False,
+				"indexed": false,
 				"internalType": "uint256",
 				"name": "amount",
 				"type": "uint256"
@@ -367,16 +367,16 @@ const contractStakingABI = [
 		"type": "function"
 	},
 	{
-		"anonymous": False,
+		"anonymous": false,
 		"inputs": [
 			{
-				"indexed": True,
+				"indexed": true,
 				"internalType": "address",
 				"name": "user",
 				"type": "address"
 			},
 			{
-				"indexed": False,
+				"indexed": false,
 				"internalType": "uint256",
 				"name": "amount",
 				"type": "uint256"
@@ -393,16 +393,16 @@ const contractStakingABI = [
 		"type": "function"
 	},
 	{
-		"anonymous": False,
+		"anonymous": false,
 		"inputs": [
 			{
-				"indexed": True,
+				"indexed": true,
 				"internalType": "address",
 				"name": "user",
 				"type": "address"
 			},
 			{
-				"indexed": False,
+				"indexed": false,
 				"internalType": "uint256",
 				"name": "amount",
 				"type": "uint256"
