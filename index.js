@@ -1,6 +1,6 @@
 //proxima-explorer.swanchain.io/
-const tokenAddress = '0x23406c8B9e11106D43AC3Cf34e3088755a16770C'; // Token contract
-const contractStakingAddress = '0xd8681C1F60Ba30982292CD22982Aa2A9f30adf2c'; // Staking contract
+const tokenAddress = '0xd8681C1F60Ba30982292CD22982Aa2A9f30adf2c'; // Token contract
+const contractStakingAddress = '0x522684126431A2aE26947d8D29c33357C62000E4'; // Staking contract
 const claimTokensAddress = '0x08F80F8FFe972A49792b743594F65d7cA0d72c78'; // Claim token contract
 
 const contractABI = [
@@ -10,22 +10,22 @@ const contractABI = [
 		"type": "constructor"
 	},
 	{
-		"anonymous": false,
+		"anonymous": False,
 		"inputs": [
 			{
-				"indexed": true,
+				"indexed": True,
 				"internalType": "address",
 				"name": "owner",
 				"type": "address"
 			},
 			{
-				"indexed": true,
+				"indexed": True,
 				"internalType": "address",
 				"name": "spender",
 				"type": "address"
 			},
 			{
-				"indexed": false,
+				"indexed": False,
 				"internalType": "uint256",
 				"name": "value",
 				"type": "uint256"
@@ -78,16 +78,16 @@ const contractABI = [
 		"type": "function"
 	},
 	{
-		"anonymous": false,
+		"anonymous": False,
 		"inputs": [
 			{
-				"indexed": true,
+				"indexed": True,
 				"internalType": "address",
 				"name": "from",
 				"type": "address"
 			},
 			{
-				"indexed": false,
+				"indexed": False,
 				"internalType": "uint256",
 				"name": "value",
 				"type": "uint256"
@@ -145,22 +145,22 @@ const contractABI = [
 		"type": "function"
 	},
 	{
-		"anonymous": false,
+		"anonymous": False,
 		"inputs": [
 			{
-				"indexed": true,
+				"indexed": True,
 				"internalType": "address",
 				"name": "from",
 				"type": "address"
 			},
 			{
-				"indexed": true,
+				"indexed": True,
 				"internalType": "address",
 				"name": "to",
 				"type": "address"
 			},
 			{
-				"indexed": false,
+				"indexed": False,
 				"internalType": "uint256",
 				"name": "value",
 				"type": "uint256"
@@ -335,16 +335,16 @@ const contractStakingABI = [
 		"type": "constructor"
 	},
 	{
-		"anonymous": false,
+		"anonymous": False,
 		"inputs": [
 			{
-				"indexed": true,
+				"indexed": True,
 				"internalType": "address",
 				"name": "user",
 				"type": "address"
 			},
 			{
-				"indexed": false,
+				"indexed": False,
 				"internalType": "uint256",
 				"name": "amount",
 				"type": "uint256"
@@ -367,16 +367,16 @@ const contractStakingABI = [
 		"type": "function"
 	},
 	{
-		"anonymous": false,
+		"anonymous": False,
 		"inputs": [
 			{
-				"indexed": true,
+				"indexed": True,
 				"internalType": "address",
 				"name": "user",
 				"type": "address"
 			},
 			{
-				"indexed": false,
+				"indexed": False,
 				"internalType": "uint256",
 				"name": "amount",
 				"type": "uint256"
@@ -393,16 +393,16 @@ const contractStakingABI = [
 		"type": "function"
 	},
 	{
-		"anonymous": false,
+		"anonymous": False,
 		"inputs": [
 			{
-				"indexed": true,
+				"indexed": True,
 				"internalType": "address",
 				"name": "user",
 				"type": "address"
 			},
 			{
-				"indexed": false,
+				"indexed": False,
 				"internalType": "uint256",
 				"name": "amount",
 				"type": "uint256"
